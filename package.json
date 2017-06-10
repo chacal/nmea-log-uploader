@@ -1,0 +1,17 @@
+{
+  "name": "nmea-log-uploader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "baconjs": "^0.7.93",
+    "bluebird": "^3.5.0",
+    "nmea-0183": "https://github.com/nherment/node-nmea.git",
+    "pg-promise": "^5.9.0"
+  }
+}
