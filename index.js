@@ -38,5 +38,5 @@ function writePositionToDb(position) {
     DO UPDATE SET point = st_point($3, $4)
   `,
   ['freya', position.timestamp, position.longitude, position.latitude])
-  .catch(e => console.error(`Failed to write position to DB! Complete input data: ${JSON.stringify(delta)} Position: ${JSON.stringify(position)}`, e))
+  .catch(e => console.error(`Failed to write position to DB! Position: ${JSON.stringify(position)}`, e))
 }
