@@ -1,13 +1,21 @@
 const pgp = require('pg-promise')()
-const db = pgp('postgres://localhost/signalk')
 const fs = require('fs')
 const nmeaParser = require('nmea-0183')
 const Bluebird = require('bluebird')
+
+const dbConf = {
+  host: process.env.DB_HOST || 'localhost',
+  port: process.env.DB_PORT || 5432,
+  database: process.env.DB_NAME || 'marinedata',
+  user: process.env.DB_USER || 'marinedata',
+  password: process.env.DB_PASSWD
+}
 
 
 const inputFile = process.argv[2]
 console.log('Importing ', inputFile)
 
+const db = pgp(dbConf)
 
 const positions = fs.readFileSync(inputFile, 'ascii')
   .split('\n')
